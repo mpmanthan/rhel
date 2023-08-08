@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent rhel-node
 
     stages {
         stage('go to git') {
@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Docker image and tags
-                    def dockerImage = "mpmanthan/firstimage"
+                    def dockerImage = "mpmanthan/rhelimage"
                     def dockerTag = "v1"
                     def registryUrl = "https://hub.docker.com/"
                     def dockerCredentialsId = "Docker-cred"
@@ -25,9 +25,9 @@ pipeline {
             }
         }
         stage('container') {
-        agent any
+        agent rhel-node
             steps {
-                sh 'docker run -d -p 8000:80 --name done mpmanthan/firstimage:v1'
+                sh 'docker run -d -p 8000:80 --name what mpmanthan/rhelimage:v1'
             }
         }
     }
