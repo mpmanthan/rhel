@@ -27,7 +27,7 @@ pipeline {
         stage('container') {
         agent any
             steps {
-                sh 'docker run -d -p 8000:80 --name what mpmanthan/rhelimage:v1'
+                sh 'docker run -d -p 8050:80 --name what mpmanthan/rhelimage:v1'
             }
         }
     }
