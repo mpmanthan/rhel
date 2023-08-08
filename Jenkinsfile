@@ -29,7 +29,6 @@ pipeline {
         stage('container') {
         agent { 
             label 'rhel-node' 
-    
         }
             steps {
                 sh 'docker run -d -p 8050:80 --name jenki mpmanthan/rhelnimage:v1'
