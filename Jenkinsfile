@@ -24,8 +24,8 @@ pipeline {
                 }
             }
         }
-        stage('container') {
-        agent rhel-node
+    stage('container') {
+    agent rhel-node
             steps {
                 sh 'docker run -d -p 8000:80 --name what mpmanthan/rhelimage:v1'
             }
