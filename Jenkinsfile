@@ -31,7 +31,7 @@ pipeline {
             label 'rhel-node' 
         }
             steps {
-                sh 'docker run -d -p 8050:80 --name jenki mpmanthan/rhelnimage:v1'
+                sh 'podman run -d -p 8050:80 --name jenki mpmanthan/rhelnimage:v1'
             }
         }
     }
